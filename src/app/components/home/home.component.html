@@ -8,11 +8,37 @@
                         <div class="card-body ">
                             <h5 class="card-title text-center ">{{ preguntas[etiqueta][key].pregunta}}</h5>
                             <p class="card-text text-center ">{{ preguntas[etiqueta][key].respuesta_corta}}</p>
-                            <button type="button" data-toggle="modal" class="btn btn-block btn-outline-primary ">Ver más...</button>
+                            <button (click)="verMas(preguntas[etiqueta][key])" type="button" data-toggle="modal" data-target="#exampleModalLong" class="btn btn-block btn-outline-primary">Ver más...</button>
                             <p class="text-right mt-4 "><a [routerLink]="['/tema', etiqueta]">#{{ preguntas[etiqueta][key].categoria }}</a></p>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">{{ tarjeta.pregunta }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <img [src]="tarjeta.foto" class="img-fluid" alt="">
+
+            <div class="modal-body">
+                <p class="text-center">
+                    {{ tarjeta.respuesta_larga }}
+
+                </p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Volver</button>
             </div>
         </div>
     </div>

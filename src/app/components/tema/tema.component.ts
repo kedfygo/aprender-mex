@@ -20,6 +20,8 @@ export class TemaComponent {
     respuesta_larga: ''
   };
 
+  tarjeta: Pregunta;
+
   preguntas: any[] = [];
 
 
@@ -37,6 +39,23 @@ export class TemaComponent {
           console.log(this.preguntas);
           });
         }
+
+        verMas( tarjeta$: Pregunta) {
+
+          console.log(tarjeta$);
+          this.tarjeta = tarjeta$;
+      
+      
+          /*
+          this._preguntasService.getPregunta(categoria$, key$)
+              .subscribe( pregunta => {
+                this.pregunta = pregunta;
+                console.log(pregunta);
+      
+      
+              });
+      */
+            }
   }
 
 
